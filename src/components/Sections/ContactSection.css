@@ -1,0 +1,447 @@
+.contact-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
+}
+
+.contact-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-subtitle {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  color: var(--color-text-primary) !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 20px !important;
+}
+
+.section-description {
+  color: var(--color-text-secondary) !important;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-main {
+  margin-bottom: 80px;
+}
+
+.contact-info {
+  height: 100%;
+}
+
+.contact-info-title {
+  color: var(--color-text-primary) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 30px !important;
+}
+
+.contact-cards {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  border-radius: 15px;
+  border: 1px solid rgba(233, 30, 99, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.15);
+  transform: translateY(-5px);
+}
+
+.contact-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+}
+
+.contact-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: scale(1.1);
+}
+
+.contact-card-text {
+  flex: 1;
+}
+
+.contact-card-title {
+  color: var(--color-text-primary) !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.contact-card-content-text {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.contact-card-action {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.contact-card-action:hover {
+  color: var(--color-accent) !important;
+  transform: translateX(5px);
+}
+
+.contact-social {
+  padding: 30px 20px;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 20px;
+  border: 1px solid rgba(233, 30, 99, 0.1);
+  text-align: center;
+}
+
+.social-title {
+  color: var(--color-text-primary) !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.social-btn.facebook {
+  background: #4267B2;
+  color: white;
+}
+
+.social-btn.instagram {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color: white;
+}
+
+.social-btn.zalo {
+  background: #0172CB;
+  color: white;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-container {
+  height: 100%;
+}
+
+.contact-form-card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.form-title {
+  color: var(--color-text-primary) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 30px !important;
+  text-align: center;
+}
+
+.contact-form .ant-form-item-label > label {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-input,
+.form-textarea {
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.1);
+}
+
+.form-input:hover,
+.form-textarea:hover {
+  border-color: var(--color-primary);
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  border: none;
+  border-radius: 25px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.3);
+}
+
+.contact-map {
+  text-align: center;
+}
+
+.map-title {
+  color: var(--color-text-primary) !important;
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 30px !important;
+}
+
+.map-container {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(233, 30, 99, 0.1) 0%, 
+    rgba(92, 107, 188, 0.1) 50%, 
+    rgba(255, 107, 53, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.map-placeholder:hover {
+  background: linear-gradient(135deg, 
+    rgba(233, 30, 99, 0.2) 0%, 
+    rgba(92, 107, 188, 0.2) 50%, 
+    rgba(255, 107, 53, 0.2) 100%);
+}
+
+.map-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.map-icon {
+  font-size: 4rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.map-text {
+  color: var(--color-text-primary) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+}
+
+.map-description {
+  color: var(--color-text-secondary) !important;
+  font-size: 14px;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.map-btn {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  border: none;
+  border-radius: 25px;
+  height: 45px;
+  padding: 0 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-section {
+    padding: 80px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 60px;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .contact-main {
+    margin-bottom: 60px;
+  }
+  
+  .contact-info {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .contact-content {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .section-description {
+    font-size: 14px;
+  }
+  
+  .contact-card-content {
+    gap: 15px;
+    padding: 5px;
+  }
+  
+  .contact-card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .social-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+  
+  .map-content {
+    padding: 30px 20px;
+  }
+  
+  .map-icon {
+    font-size: 3rem;
+  }
+  
+  .map-text {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .contact-card-icon {
+    align-self: center;
+  }
+  
+  .social-links {
+    gap: 10px;
+  }
+  
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .form-title {
+    font-size: 1.3rem !important;
+  }
+  
+  .submit-btn {
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .map-container {
+    height: 250px;
+  }
+  
+  .map-content {
+    padding: 20px 15px;
+  }
+  
+  .map-icon {
+    font-size: 2.5rem;
+  }
+  
+  .map-text {
+    font-size: 1rem !important;
+  }
+  
+  .map-description {
+    font-size: 12px;
+  }
+}
