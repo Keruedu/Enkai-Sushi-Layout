@@ -6,11 +6,23 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    host: true, // Cho phép truy cập từ bên ngoài
-    open: true, // Tự động mở browser khi start
+    host: '0.0.0.0', // Bind to all interfaces
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'enkai-sushi-layout.onrender.com',
+      '.onrender.com', // Cho phép tất cả subdomain của onrender.com
+    ],
+    open: false, // Tắt auto-open cho deployment
   },
   preview: {
     port: 4173,
-    host: true,
+    host: '0.0.0.0',
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'enkai-sushi-layout.onrender.com',
+      '.onrender.com',
+    ],
   }
 })
