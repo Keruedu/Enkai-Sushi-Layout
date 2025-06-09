@@ -2,20 +2,24 @@ import React from 'react';
 import { Row, Col, Typography, Space } from 'antd';
 import { PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { contactInfo } from '../../data/mockData';
+import logoImg from '../../assets/images/footer-logo.png';
 
 const { Title, Text } = Typography;
 
 const Footer = ({ language }) => {
-  const content = contactInfo[language];
-  return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+  const content = contactInfo[language];  return (
+    <footer className="bg-gradient-to-r from-secondary-900 via-secondary-800 to-secondary-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Row gutter={[32, 32]}>
           <Col xs={24} md={8}>
             <div className="space-y-4">
-              <Title level={4} className="text-white text-2xl font-bold mb-4">
-                Enkai Sushi
-              </Title>
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src={logoImg} 
+                  alt="Enkai Sushi Logo" 
+                  className="h-12 w-auto"
+                />
+              </div>
               <Text className="text-gray-300 text-base leading-relaxed block">
                 {language === 'vi' 
                   ? 'Hương vị Nhật Bản chính thống tại trung tâm Sài Gòn'
@@ -32,11 +36,11 @@ const Footer = ({ language }) => {
               </Title>
               <Space direction="vertical" size="medium" className="w-full">
                 <div className="flex items-center space-x-3">
-                  <EnvironmentOutlined className="text-primary-400 text-lg" />
+                  <EnvironmentOutlined className="text-primary-500 text-lg" />
                   <Text className="text-gray-300">{content.address}</Text>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <PhoneOutlined className="text-primary-400 text-lg" />
+                  <PhoneOutlined className="text-primary-500 text-lg" />
                   <Text className="text-gray-300">{content.phone}</Text>
                 </div>
               </Space>
@@ -50,11 +54,11 @@ const Footer = ({ language }) => {
               </Title>
               <Space direction="vertical" size="medium" className="w-full">
                 <div className="flex items-center space-x-3">
-                  <ClockCircleOutlined className="text-primary-400 text-lg" />
+                  <ClockCircleOutlined className="text-primary-500 text-lg" />
                   <Text className="text-gray-300">{content.hours.weekdays}</Text>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <ClockCircleOutlined className="text-primary-400 text-lg" />
+                  <ClockCircleOutlined className="text-primary-500 text-lg" />
                   <Text className="text-gray-300">{content.hours.weekend}</Text>
                 </div>
               </Space>
@@ -62,7 +66,7 @@ const Footer = ({ language }) => {
           </Col>
         </Row>
         
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center">
+        <div className="border-t border-gray-600 mt-12 pt-8 text-center">
           <Text className="text-gray-400">
             © 2025 Enkai Sushi. {language === 'vi' ? 'Bảo lưu mọi quyền.' : 'All rights reserved.'}
           </Text>

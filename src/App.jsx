@@ -41,18 +41,18 @@ function App() {
   // Ant Design theme configuration that works with Tailwind
   const theme = {
     token: {
-      colorPrimary: '#ef4444', // Tailwind red-500
-      colorSuccess: '#10b981', // Tailwind emerald-500
-      colorWarning: '#f59e0b', // Tailwind amber-500
-      colorError: '#ef4444',   // Tailwind red-500
-      colorInfo: '#3b82f6',    // Tailwind blue-500
+      colorPrimary: '#EF405B', // Enkai pink
+      colorSuccess: '#10b981', 
+      colorWarning: '#f59e0b', 
+      colorError: '#EF405B',   
+      colorInfo: '#3b82f6',    
       fontFamily: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
       borderRadius: 8,
       fontSize: 14,
       lineHeight: 1.5,
       colorBgContainer: '#ffffff',
-      colorText: '#1f2937', // Tailwind gray-800
-      colorTextSecondary: '#6b7280', // Tailwind gray-500
+      colorText: '#2C2F5C', // Enkai dark blue
+      colorTextSecondary: '#6b7280',
     },
     components: {
       Button: {
@@ -74,9 +74,9 @@ function App() {
         titleFontSize: 16,
         titleFontSizeLG: 18,
         itemColor: '#6b7280',
-        itemHoverColor: '#ef4444',
-        itemSelectedColor: '#ef4444',
-        inkBarColor: '#ef4444',
+        itemHoverColor: '#EF405B',
+        itemSelectedColor: '#EF405B',
+        inkBarColor: '#EF405B',
       },
       Typography: {
         titleMarginBottom: 0,

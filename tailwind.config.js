@@ -5,31 +5,30 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
+    extend: {      colors: {
         primary: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444', // Main primary color (red-500)
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+          50: '#fef2f4',
+          100: '#fde2e7',
+          200: '#fbc2d1',
+          300: '#f7a1b5',
+          400: '#f0718a',
+          500: '#EF405B', // Main primary color - Enkai pink
+          600: '#e11d48',
+          700: '#be123c',
+          800: '#9f1239',
+          900: '#881337',
         },
         secondary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1', // Main secondary color (indigo-500)
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+          50: '#f1f2f7',
+          100: '#e3e5ee',
+          200: '#cdd0e0',
+          300: '#aab0c8',
+          400: '#8088ab',
+          500: '#646b93',
+          600: '#52597d',
+          700: '#434967',
+          800: '#3a3f57',
+          900: '#2C2F5C', // Main secondary color - Enkai dark blue
         },
         accent: {
           50: '#fff7ed',
@@ -37,7 +36,7 @@ export default {
           200: '#fed7aa',
           300: '#fdba74',
           400: '#fb923c',
-          500: '#f97316', // Main accent color (orange-500)
+          500: '#f97316',
           600: '#ea580c',
           700: '#c2410c',
           800: '#9a3412',
