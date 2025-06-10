@@ -17,18 +17,17 @@ export default {
           700: '#be123c',
           800: '#9f1239',
           900: '#881337',
-        },
-        secondary: {
+        },        secondary: {
           50: '#f1f2f7',
-          100: '#e3e5ee',
-          200: '#cdd0e0',
-          300: '#aab0c8',
-          400: '#8088ab',
-          500: '#646b93',
-          600: '#52597d',
-          700: '#434967',
-          800: '#3a3f57',
-          900: '#2C2F5C', // Main secondary color - Enkai dark blue
+          100: '#e8eaf0',
+          200: '#d5d8e3',
+          300: '#b8bdd0',
+          400: '#969cb7',
+          500: '#7a81a0',
+          600: '#666d8a',
+          700: '#565c75',
+          800: '#494e62',
+          900: '#2A315D', // Main secondary color - Updated to new color
         },
         accent: {
           50: '#fff7ed',

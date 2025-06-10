@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Row, Col, Typography, Card, Button, Tag, Tabs, message } from 'antd';
 import { ShoppingCartOutlined, HeartOutlined, HeartFilled, StarFilled } from '@ant-design/icons';
 import { menuItems } from '../../data/mockData';
+import LazyImage from '../Common/LazyImage';
+import SlideUpAnimation from '../Common/SlideUpAnimation';
 
 const { Title, Text } = Typography;
 
@@ -49,13 +51,13 @@ const MenuSection = ({ language }) => {
     };return (
       <Card 
         className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 h-full flex flex-col"
-        hoverable
-        cover={
+        hoverable        cover={
           <div className="relative overflow-hidden h-48 bg-gray-200">
-            <img 
+            <LazyImage 
               src={item.image} 
               alt={itemName}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loadingClassName="flex items-center justify-center bg-gray-200 h-full"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
               <div className="flex space-x-3">                <Button 
@@ -183,15 +185,18 @@ const MenuSection = ({ language }) => {
           <Row gutter={[32, 32]}>
             {filteredItems.map((item, index) => (
               <Col xs={24} sm={12} lg={8} xl={6} key={index}>
-                <div className="menu-card-container">
+                <SlideUpAnimation 
+                  delay={index * 100} 
+                  className="menu-card-container h-full"
+                >
                   <MenuCard item={item} />
-                </div>
+                </SlideUpAnimation>
               </Col>
             ))}
           </Row>
         </div>
 
-        <div className="text-center bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl p-12 text-white">
+        <div className="text-center bg-primary-500 rounded-3xl p-12 text-white">
           <Title level={3} className="text-3xl font-bold text-white mb-4">
             {language === 'vi' ? 'Muốn xem thêm?' : 'Want to see more?'}
           </Title>

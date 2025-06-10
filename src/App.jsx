@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { ConfigProvider } from 'antd';
+import React, { useState, useEffect, Suspense } from 'react';
+import { ConfigProvider, Spin } from 'antd';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
-import HeroSection from './components/Sections/HeroSection';
-import AboutSection from './components/Sections/AboutSection';
-import MenuSection from './components/Sections/MenuSection';
-import ContactSection from './components/Sections/ContactSection';
+import LazySection from './components/Common/LazySection';
+import usePreloadCriticalImages from './hooks/usePreloadCriticalImages';
+
+// Lazy load components
+const HeroSection = React.lazy(() => import('./components/Sections/HeroSection'));
+const AboutSection = React.lazy(() => import('./components/Sections/AboutSection'));
+const MenuSection = React.lazy(() => import('./components/Sections/MenuSection'));
+const ContactSection = React.lazy(() => import('./components/Sections/ContactSection'));
 
 function App() {
   const [language, setLanguage] = useState('vi');
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // Preload critical images for better performance
+  usePreloadCriticalImages();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -51,7 +58,7 @@ function App() {
       fontSize: 14,
       lineHeight: 1.5,
       colorBgContainer: '#ffffff',
-      colorText: '#2C2F5C', // Enkai dark blue
+      colorText: '#2A315D', // Updated to new color
       colorTextSecondary: '#6b7280',
     },
     components: {
@@ -85,6 +92,13 @@ function App() {
     }
   };
 
+  // Loading component for Suspense fallback
+  const LoadingFallback = () => (
+    <div className="flex justify-center items-center h-64">
+      <Spin size="large" />
+    </div>
+  );
+
   return (
     <ConfigProvider theme={theme}>
       <div className="min-h-screen bg-white">
@@ -96,22 +110,38 @@ function App() {
         />
         
         <main className="pt-16">
-          <HeroSection 
-            language={language} 
-            onMenuClick={() => scrollToSection('menu')}
-          />
+          <LazySection minHeight="600px" animationDelay={0}>
+            <Suspense fallback={<LoadingFallback />}>
+              <HeroSection 
+                language={language} 
+                onMenuClick={() => scrollToSection('menu')}
+              />
+            </Suspense>
+          </LazySection>
           
-          <AboutSection 
-            language={language} 
-          />
+          <LazySection minHeight="500px" animationDelay={200}>
+            <Suspense fallback={<LoadingFallback />}>
+              <AboutSection 
+                language={language} 
+              />
+            </Suspense>
+          </LazySection>
           
-          <MenuSection 
-            language={language} 
-          />
+          <LazySection minHeight="600px" animationDelay={300}>
+            <Suspense fallback={<LoadingFallback />}>
+              <MenuSection 
+                language={language} 
+              />
+            </Suspense>
+          </LazySection>
           
-          <ContactSection 
-            language={language} 
-          />
+          <LazySection minHeight="400px" animationDelay={400}>
+            <Suspense fallback={<LoadingFallback />}>
+              <ContactSection 
+                language={language} 
+              />
+            </Suspense>
+          </LazySection>
         </main>
         
         <Footer 

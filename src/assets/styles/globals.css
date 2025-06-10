@@ -2,7 +2,7 @@
 :root {
   /* Color Palette */
   --primary-color: #E91E63;
-  --secondary-color: #5C6BC0;
+  --secondary-color: #2A315D;
   --accent-color: #FF6B35;
   --background-color: #F5F5F5;
   --text-color: #212121;
@@ -38,6 +38,115 @@
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
+}
+
+/* Wave Pattern Background Classes */
+.wave-pattern-bg {
+  background-image: url('/src/assets/images/footer-pattern.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 60px;
+  position: relative;
+}
+
+.wave-pattern-top {
+  background-image: url('/src/assets/images/footer-pattern.png');
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: auto 60px;
+  position: relative;
+}
+
+.wave-pattern-overlay {
+  position: relative;
+}
+
+.wave-pattern-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/images/footer-pattern.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 40px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wave-pattern-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+.wave-section-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-image: url('/src/assets/images/footer-pattern.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 60px;
+  z-index: 10;
+}
+
+.wave-pattern-animated {
+  background-image: url('/src/assets/images/footer-pattern.png');
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  background-size: 2000px 60px;
+  animation: waveMove 20s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 2000px bottom;
+  }
+}
+
+/* Add specific wave animation class */
+.wave-animation {
+  animation: waveMove 20s linear infinite;
+}
+
+/* Alternative wave pattern using CSS gradients as fallback */
+.wave-gradient-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.wave-gradient-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: repeating-linear-gradient(
+    90deg,
+    #3b82f6 0px,
+    #3b82f6 20px,
+    #1e40af 20px,
+    #1e40af 40px,
+    #3b82f6 40px,
+    #3b82f6 60px
+  );
+  clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
 }
 
 /* Global Styles */

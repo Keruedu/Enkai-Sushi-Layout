@@ -3,18 +3,23 @@ import { Row, Col, Typography, Space } from 'antd';
 import { PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { contactInfo } from '../../data/mockData';
 import logoImg from '../../assets/images/footer-logo.png';
+import footerPattern from '../../assets/images/footer-pattern.png';
+import pattern from '../../assets/images/pattern.png';
+import LazyImage from '../Common/LazyImage';
 
 const { Title, Text } = Typography;
 
 const Footer = ({ language }) => {
   const content = contactInfo[language];  return (
-    <footer className="bg-gradient-to-r from-secondary-900 via-secondary-800 to-secondary-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer 
+      className="text-white relative bg-[#2A315D]"
+
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <Row gutter={[32, 32]}>
           <Col xs={24} md={8}>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3 mb-4">
-                <img 
+            <div className="space-y-4">              <div className="flex items-center space-x-3 mb-4">
+                <LazyImage 
                   src={logoImg} 
                   alt="Enkai Sushi Logo" 
                   className="h-12 w-auto"

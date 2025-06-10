@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Typography, Card, Button, Space, Form, Input } from 'antd';
 import { PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined, MailOutlined, SendOutlined } from '@ant-design/icons';
 import { contactInfo } from '../../data/mockData';
+import footerPattern from '../../assets/images/footer-pattern.png';
 
 const { Title, Text } = Typography;
 const { TextArea } = Input;
@@ -40,9 +41,17 @@ const ContactSection = ({ language }) => {
       ),
       action: language === 'vi' ? 'Chi tiết' : 'Details'
     }
-  ];
-  return (
-    <section className="py-16 lg:py-24 bg-white" id="contact">
+  ];  return (
+    <section 
+      className="py-16 lg:py-24 bg-white relative" 
+      id="contact"
+      style={{
+        backgroundImage: `url(${footerPattern})`,
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: 'bottom',
+        backgroundSize: 'auto 60px'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-primary-500 font-semibold text-lg mb-2">

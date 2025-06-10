@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Remove default browser margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
 /* Custom base styles */
 :root {
   font-family: 'Unbounded', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -396,60 +418,277 @@
   }
 }
 
-/* Additional utility classes for responsive design */
-@media (max-width: 768px) {
-  .mobile-banner-spacing {
-    margin-top: 1rem !important;
+/* ===============================
+   LAZY LOADING & ANIMATIONS
+   =============================== */
+
+/* Lazy Loading Image States */
+.lazy-image {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95);
+  background-color: #f5f5f5;
+  background-image: linear-gradient(90deg, #f5f5f5 25%, #e0e0e0 50%, #f5f5f5 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+  transform: scale(1);
+  background: none;
+  animation: none;
+}
+
+.lazy-image.error {
+  opacity: 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
   }
-  
-  .mobile-dots-spacing {
-    gap: 0.5rem !important;
-  }
-  
-  .mobile-banner-container {
-    touch-action: pan-y !important;
-    -webkit-overflow-scrolling: touch !important;
+  100% {
+    background-position: 200% 0;
   }
 }
 
-@media (max-width: 480px) {
-  .mobile-banner-container {
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-    touch-action: pan-y !important;
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up-animation {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-up-animation.animate {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.slide-up-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lazy Section States */
+.lazy-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.lazy-section.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Animation Delays */
+.lazy-section.delay-0 {
+  animation-delay: 0ms;
+  transition-delay: 0ms;
+}
+
+.lazy-section.delay-200 {
+  animation-delay: 200ms;
+  transition-delay: 200ms;
+}
+
+.lazy-section.delay-300 {
+  animation-delay: 300ms;
+  transition-delay: 300ms;
+}
+
+.lazy-section.delay-400 {
+  animation-delay: 400ms;
+  transition-delay: 400ms;
+}
+
+/* Menu Item Staggered Animations */
+.menu-item-0 { animation-delay: 0ms; }
+.menu-item-1 { animation-delay: 100ms; }
+.menu-item-2 { animation-delay: 200ms; }
+.menu-item-3 { animation-delay: 300ms; }
+.menu-item-4 { animation-delay: 400ms; }
+.menu-item-5 { animation-delay: 500ms; }
+
+/* Feature Card Staggered Animations */
+.feature-card-0 { animation-delay: 0ms; }
+.feature-card-1 { animation-delay: 150ms; }
+.feature-card-2 { animation-delay: 300ms; }
+
+/* Loading Skeleton for Lazy Content */
+.lazy-skeleton {
+  background: linear-gradient(90deg, #f0f2f5 25%, #e6e8eb 50%, #f0f2f5 75%);
+  background-size: 200% 100%;
+  animation: skeletonLoading 1.5s infinite;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@keyframes skeletonLoading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Fade In Animation for Lazy Content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Loading Spinner for Suspense */
+.lazy-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  opacity: 0.6;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #d97706;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===============================
+   ACCESSIBILITY & REDUCED MOTION
+   =============================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
   
-  .mobile-dots-size {
-    width: 0.5rem !important;
-    height: 0.5rem !important;
+  /* Still allow opacity transitions for accessibility */
+  .lazy-image,
+  .lazy-section,
+  .slide-up-animation {
+    transition: opacity 0.2s ease !important;
+    transform: none !important;
   }
   
+  /* Remove transform animations but keep opacity */
+  .lazy-image.loaded,
+  .lazy-section.loaded,
+  .slide-up-animation.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Disable shimmer and skeleton animations */
+  .lazy-image,
+  .lazy-skeleton {
+    animation: none !important;
+    background: #f5f5f5 !important;
+  }
+  
+  /* Simplify loading indicators */
+  .spinner {
+    animation: none !important;
+    border: 3px solid #d97706 !important;
+    border-radius: 50% !important;
+  }
+  
+  /* Keep banner slider functional but remove animations */
   .slider-item {
-    border-radius: 8px !important;
-    height: 160px !important;
+    transition: opacity 0.2s ease !important;
+    transform: none !important;
   }
   
-  .banner-content {
-    background-size: contain !important;
-    background-position: center center !important;
+  .slider-track {
+    transition: transform 0.2s ease !important;
   }
 }
 
-/* Font utilities */
-@layer utilities {
-  .font-unbounded {
-    font-family: 'Unbounded', system-ui, sans-serif;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .lazy-image {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
   }
   
-  .font-dancing {
-    font-family: 'Dancing Script', cursive;
+  .lazy-skeleton {
+    background: linear-gradient(90deg, #ffffff 25%, #cccccc 50%, #ffffff 75%) !important;
   }
   
-  .font-phudu {
-    font-family: 'Phudu', system-ui, sans-serif;
+  .spinner {
+    border-color: #000000 !important;
+    border-top-color: #ffffff !important;
+  }
+}
+
+/* Focus management for lazy loaded content */
+.lazy-section[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Ensure smooth scrolling unless user prefers reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Print styles - disable animations and use static styles */
+@media print {
+  .lazy-image,
+  .lazy-section,
+  .slide-up-animation {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
   
-  .font-inter {
-    font-family: 'Inter', system-ui, sans-serif;
+  .lazy-skeleton {
+    background: #f5f5f5 !important;
+    animation: none !important;
   }
 }

@@ -4,12 +4,20 @@ import { PlayCircleOutlined, ShoppingCartOutlined, LeftOutlined, RightOutlined }
 import banner1 from '../../assets/images/banner1.png';
 import banner2 from '../../assets/images/banner2.png';
 import gateImg from '../../assets/images/group.png';
+import footerPattern from '../../assets/images/footer-pattern.png';
+import LazyImage from '../Common/LazyImage';
+import { PerformanceMonitor } from '../../utils/performanceMonitor';
 
 const HeroSection = ({ language }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const sliderRef = useRef(null);
+
+  // Track component load time
+  useEffect(() => {
+    PerformanceMonitor.trackComponentLoad('HeroSection');
+  }, []);
 
   const banners = [
     {
@@ -160,9 +168,32 @@ const HeroSection = ({ language }) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-  return (
-    <section className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-hidden" id="hero">      {/* Banner Slider Section */}
+  };  return (
+    <section 
+      className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-hidden" 
+      id="hero"
+      style={{
+        position: 'relative'
+      }}
+    >      {/* Wave pattern overlay - behind header - only on tablet and up */}
+      <div 
+        className=""
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '80px',
+          backgroundImage: `url(${footerPattern})`,
+          backgroundRepeat: 'repeat-x',
+          backgroundPosition: 'bottom',
+          backgroundSize: 'auto 60px',
+          zIndex: 40
+          
+        }}
+      >
+      </div>
+      {/* Banner Slider Section */}
       <div className="relative pt-8 pb-8">
         <div className="relative w-full">        {/* Main Slider Container */}
           <div className="relative banner-slider mobile-banner-container">
@@ -243,14 +274,31 @@ const HeroSection = ({ language }) => {
             ))}
           </div>
         </div>
-      </div>{/* Main Hero Content with Gate Design */}
-      <div className="relative lg:py-16">
+      </div>      {/* Main Hero Content with Gate Design */}
+      <div className="relative" style={{ zIndex: 10 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Row gutter={[48, 48]} align="middle">
             {/* Left Side - Gate Illustration */}
             <Col xs={24} lg={12} className="relative">
-              <div className="relative">
-                <img
+              <div 
+                className="hidden max-md:block"
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '80px',
+                  backgroundImage: `url(${footerPattern})`,
+                  backgroundRepeat: 'repeat-x',
+                  backgroundPosition: 'bottom',
+                  backgroundSize: 'auto 60px',
+                  zIndex: 40
+                  
+                }}
+              >
+              </div>              <div className="relative"
+                >
+                <LazyImage
                   src={gateImg}
                   alt="Japanese Gate"
                   className="w-full h-auto object-cover"

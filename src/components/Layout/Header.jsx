@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layout, Button, Dropdown, Space } from 'antd';
 import { MenuOutlined, GlobalOutlined } from '@ant-design/icons';
 import logoImg from '../../assets/images/logo.png';
+import LazyImage from '../Common/LazyImage';
 
 const { Header: AntHeader } = Layout;
 
@@ -79,17 +80,17 @@ const Header = ({ language, onLanguageChange, isScrolled, onMenuClick }) => {
         ? 'bg-white shadow-lg backdrop-blur-sm' 
         : 'bg-white bg-opacity-95 backdrop-blur-sm'
     } border-b border-gray-100`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">        {/* Logo */}
-        <div 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">        {/* Logo */}        <div 
           className="flex items-center space-x-3 cursor-pointer group" 
           onClick={() => onMenuClick('hero')}
         >
-          <img 
+          <LazyImage 
             src={logoImg} 
             alt="Enkai Sushi Logo" 
             className="h-10 w-auto transform group-hover:scale-105 transition-transform duration-300"
+            loadingClassName="flex items-center justify-center bg-gray-100 h-10 w-10 rounded"
           />
-        </div>        {/* Desktop Navigation */}
+        </div>{/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-2">
           {navigationItems.map((item) => (
             <div
