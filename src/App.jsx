@@ -105,7 +105,7 @@ function App() {
           onMenuClick={scrollToSection}
         />
         
-        <main className="pt-16">
+        <main className="pt-14 sm:pt-16">
           <LazySection minHeight="600px" animationDelay={0}>
             <Suspense fallback={<LoadingFallback />}>
               <HeroSection 

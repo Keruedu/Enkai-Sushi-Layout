@@ -80,17 +80,16 @@ const Header = ({ language, onLanguageChange, isScrolled, onMenuClick }) => {
         ? 'bg-white shadow-lg backdrop-blur-sm' 
         : 'bg-white bg-opacity-95 backdrop-blur-sm'
     } border-b border-gray-100`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">        
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 h-14 sm:h-16 flex items-center justify-between">        
         {/* Logo */}        
         <div 
           className="flex items-center space-x-3 cursor-pointer group" 
           onClick={() => onMenuClick('hero')}
-        >
-          <LazyImage 
+        >          <LazyImage 
             src={logoImg} 
             alt="Enkai Sushi Logo" 
-            className="h-10 w-auto transform group-hover:scale-105 transition-transform duration-300"
-            loadingClassName="flex items-center justify-center bg-gray-100 h-10 w-10 rounded"
+            className="h-8 sm:h-10 w-auto header-logo transform group-hover:scale-105 transition-transform duration-300"
+            loadingClassName="flex items-center justify-center bg-gray-100 h-8 sm:h-10 w-8 sm:w-10 rounded"
           />
         </div>{/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-2">
@@ -105,15 +104,14 @@ const Header = ({ language, onLanguageChange, isScrolled, onMenuClick }) => {
               </span>
             </div>
           ))}
-        </nav>
-
-        {/* Language Switcher & Mobile Menu */}
-        <div className="flex items-center space-x-2">
+        </nav>        {/* Language Switcher & Mobile Menu */}
+        <div className="flex items-center space-x-1 sm:space-x-2">
           <Dropdown menu={languageMenu} trigger={['click']}>
             <Button 
               type="text" 
               icon={<GlobalOutlined />}
-              className="hover:bg-gray-100 hover:text-primary-500 transition-colors duration-200"
+              size="small"
+              className="hover:bg-gray-100 hover:text-primary-500 transition-colors duration-200 text-xs sm:text-sm"
             >
               {language === 'vi' ? '🇻🇳' : '🇺🇸'}
             </Button>
@@ -123,6 +121,7 @@ const Header = ({ language, onLanguageChange, isScrolled, onMenuClick }) => {
           <Button
             type="text"
             icon={<MenuOutlined />}
+            size="small"
             className="md:hidden hover:bg-gray-100 hover:text-primary-500 transition-colors duration-200"
             onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
           />

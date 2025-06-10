@@ -19,11 +19,10 @@ const Footer = ({ language }) => {
         <Row gutter={[32, 32]}>
           <Col xs={24} md={6}>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3 mb-4">
-                <LazyImage 
+              <div className="flex items-center space-x-3 mb-4">                <LazyImage 
                   src={logoImg} 
                   alt="Enkai Sushi Logo" 
-                  className="h-12 w-auto"
+                  className="h-10 sm:h-12 w-auto footer-logo"
                 />
               </div>
               <Text className="text-gray-300 text-base leading-relaxed block">
