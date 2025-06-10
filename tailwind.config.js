@@ -42,10 +42,13 @@ export default {
           800: '#9a3412',
           900: '#7c2d12',
         }
-      },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },      fontFamily: {
+        sans: ['Unbounded', 'Inter', 'system-ui', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
+        unbounded: ['Unbounded', 'system-ui', 'sans-serif'],
+        dancing: ['Dancing Script', 'cursive'],
+        phudu: ['Phudu', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

@@ -118,7 +118,7 @@ export const menuItems = [
     },
     price: 85000,
     tags: ["popular", "classic"],
-    image: "https://images.unsplash.com/photo-1617196034183-421b4917abd8?w=300&h=200&fit=crop"
+    image: "https://images.unsplash.com/photo-1563612116625-3012372fccce?w=300&h=200&fit=crop"
   },
   {
     id: 9,

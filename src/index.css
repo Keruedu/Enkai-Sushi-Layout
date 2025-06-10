@@ -4,7 +4,7 @@
 
 /* Custom base styles */
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Unbounded', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -432,5 +432,24 @@
   .banner-content {
     background-size: contain !important;
     background-position: center center !important;
+  }
+}
+
+/* Font utilities */
+@layer utilities {
+  .font-unbounded {
+    font-family: 'Unbounded', system-ui, sans-serif;
+  }
+  
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-phudu {
+    font-family: 'Phudu', system-ui, sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }

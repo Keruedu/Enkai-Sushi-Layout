@@ -206,7 +206,9 @@ const MenuSection = ({ language }) => {
             size="large"
             className="bg-white text-primary-500 border-white hover:bg-gray-100 hover:text-primary-600 px-8 py-3 h-auto text-lg font-semibold rounded-xl"
           >
-            {language === 'vi' ? 'Xem thực đơn đầy đủ' : 'View Full Menu'}          </Button>        </div>
+            {language === 'vi' ? 'Xem thực đơn đầy đủ' : 'View Full Menu'}          
+            </Button>        
+          </div>
       </div>
     </section>
   );
