@@ -572,163 +572,39 @@ html, body {
     z-index: 3;
   }
 
-  /* Menu Card Animations */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Social Media Button Override */
+  footer .ant-btn-text:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: transparent !important;
   }
   
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
-    opacity: 1; /* Changed from 0 to 1 to ensure visibility */
+  /* Đảm bảo nút Zalo giữ màu trắng khi hover */
+  footer .ant-btn-text.bg-white:hover {
+    background-color: rgb(243, 244, 246) !important; /* hover:bg-gray-100 */
   }
   
-  /* Notification Banner Animations */
-  @keyframes slide-in {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  /* Ghi đè tất cả button text trong footer */
+  footer .ant-btn-text {
+    color: inherit !important;
   }
   
-  .animate-slide-in {
-    animation: slide-in 0.5s ease-out forwards;
+  footer .ant-btn-text:focus {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: transparent !important;
   }
-  
-  /* Custom Alert Styles */
-  .ant-alert {
-    transition: all 0.3s ease;
-  }
-  
-  .ant-alert:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  }
-  
-  .ant-alert-close-icon {
-    transition: all 0.2s ease;
-  }
-  
-  .ant-alert-close-icon:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Menu Card Equal Heights */
-  .menu-card-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-height: 400px; /* Ensure minimum height */
-  }
-  
-  .menu-card-container .ant-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    opacity: 1 !important; /* Ensure visibility */
-  }
-  
-  .menu-card-container .ant-card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Menu Cards Responsive Design */
-  @media (max-width: 768px) {
-    .menu-card-container .ant-card {
-      margin-bottom: 1rem;
-    }
-    
-    .menu-card-container .ant-card-body {
-      padding: 1rem;
-    }
-    
-    .menu-card-container .ant-card-cover {
-      height: 200px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .menu-card-container .ant-card-body {
-      padding: 0.75rem;
-    }
-    
-    .menu-card-container .ant-card-cover {
-      height: 160px;
-    }
-    
-    .animate-fade-in {
-      animation-delay: 0s !important;
-    }
-  }
-  
-  /* Welcome Modal Styles */
-  .welcome-modal .ant-modal-content {
-    border-radius: 16px !important;
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-  }
-  
-  .welcome-modal .ant-modal-close {
+
+  /* Footer Title Override */
+  footer .ant-typography h5 {
     color: white !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 50% !important;
-    width: 32px !important;
-    height: 32px !important;
-    top: 16px !important;
-    right: 16px !important;
   }
   
-  .welcome-modal .ant-modal-close:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
+  footer .ant-typography {
+    color: white !important;
   }
   
-  /* Toast-like notifications */
-  .toast-notification {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 1000;
-    max-width: 350px;
-    animation: slideInRight 0.3s ease-out;
-  }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Loading skeleton for menu cards */
-  .menu-skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
-  
-  @keyframes loading {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
+  /* Đảm bảo tất cả title trong footer đều màu trắng */
+  footer .ant-typography-title {
+    color: white !important;
   }
 }
 
