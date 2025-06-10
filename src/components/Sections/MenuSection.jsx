@@ -195,25 +195,6 @@ const MenuSection = ({ language }) => {
             ))}
           </Row>
         </div>
-
-        <div className="text-center bg-primary-500 rounded-3xl p-12 text-white">
-          <Title level={3} className="text-3xl font-bold text-white mb-4">
-            {language === 'vi' ? 'Muốn xem thêm?' : 'Want to see more?'}
-          </Title>
-          <Text className="text-primary-100 text-lg mb-8 block max-w-2xl mx-auto">
-            {language === 'vi' 
-              ? 'Khám phá toàn bộ thực đơn với hơn 50 món ăn đặc biệt'
-              : 'Explore our full menu with over 50 signature dishes'
-            }
-          </Text>
-          <Button 
-            type="default"
-            size="large"
-            className="bg-white text-primary-500 border-white hover:bg-gray-100 hover:text-primary-600 px-8 py-3 h-auto text-lg font-semibold rounded-xl"
-          >
-            {language === 'vi' ? 'Xem thực đơn đầy đủ' : 'View Full Menu'}          
-            </Button>        
-          </div>
       </div>
     </section>
   );

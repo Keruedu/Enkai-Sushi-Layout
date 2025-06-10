@@ -57,8 +57,7 @@ const Footer = ({ language }) => {
             <div className="space-y-4">
               <Title level={5} className="!text-white text-lg font-semibold mb-4">
                 {language === 'vi' ? 'Giờ mở cửa' : 'Opening Hours'}
-              </Title>
-              <Space direction="vertical" size="medium" className="w-full">
+              </Title>              <Space direction="vertical" size="medium" className="w-full">
                 <div className="flex items-center space-x-3">
                   <ClockCircleOutlined className="text-primary-500 text-lg" />
                   <Text className="text-gray-300">{content.hours.weekdays}</Text>
@@ -66,6 +65,10 @@ const Footer = ({ language }) => {
                 <div className="flex items-center space-x-3">
                   <ClockCircleOutlined className="text-primary-500 text-lg" />
                   <Text className="text-gray-300">{content.hours.weekend}</Text>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <ClockCircleOutlined className="text-primary-500 text-lg" />
+                  <Text className="text-gray-300">{content.hours.saturday}</Text>
                 </div>
               </Space>
             </div>

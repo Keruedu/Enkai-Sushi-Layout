@@ -194,20 +194,22 @@ export const aboutContent = {
 
 export const contactInfo = {
   vi: {
-    address: "113 Đ. Cao Thắng, Quận 3, Hồ Chí Minh",
+    address: "87B Đường Cao Thắng, Quận 3, Hồ Chí Minh",
     phone: "+84 869 309 707",
     hours: {
-      weekdays: "Thứ 2 - Thứ 5: 8:00 - 22:00",
-      weekend: "Thứ 6 - CN: 8:00 - 23:00"
+      weekdays: "Thứ 2 - Thứ 5: 8:00 - 21:30",
+      weekend: "Thứ 6, CN: 8:00 - 21:30",
+      saturday: "Thứ 7: 8:00 - 16:00 | ENKAI DAY: 6:30 - 21:30"
     },
     mapTitle: "Vị trí cửa hàng"
   },
   en: {
-    address: "113 Cao Thang St., District 3, Ho Chi Minh City",
+    address: "87B Cao Thang St., District 3, Ho Chi Minh City",
     phone: "+84 869 309 707",
     hours: {
-      weekdays: "Mon - Thu: 8:00 AM - 10:00 PM",
-      weekend: "Fri - Sun: 8:00 AM - 11:00 PM"
+      weekdays: "Mon - Thu: 8:00 AM - 9:30 PM",
+      weekend: "Fri, Sun: 8:00 AM - 9:30 PM",
+      saturday: "Sat: 8:00 AM - 4:00 PM | ENKAI DAY: 6:30 AM - 9:30 PM"
     },
     mapTitle: "Store Location"
   }

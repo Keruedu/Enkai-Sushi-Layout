@@ -80,7 +80,9 @@ const Header = ({ language, onLanguageChange, isScrolled, onMenuClick }) => {
         ? 'bg-white shadow-lg backdrop-blur-sm' 
         : 'bg-white bg-opacity-95 backdrop-blur-sm'
     } border-b border-gray-100`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">        {/* Logo */}        <div 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">        
+        {/* Logo */}        
+        <div 
           className="flex items-center space-x-3 cursor-pointer group" 
           onClick={() => onMenuClick('hero')}
         >

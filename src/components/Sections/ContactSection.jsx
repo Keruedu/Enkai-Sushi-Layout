@@ -32,14 +32,14 @@ const ContactSection = ({ language }) => {
       title: language === 'vi' ? 'Điện thoại' : 'Phone',
       content: content.phone,
       action: language === 'vi' ? 'Gọi ngay' : 'Call Now'
-    },
-    {
+    },    {
       icon: <ClockCircleOutlined />,
       title: language === 'vi' ? 'Giờ mở cửa' : 'Opening Hours',
       content: (
         <div>
           <div>{content.hours.weekdays}</div>
           <div>{content.hours.weekend}</div>
+          <div>{content.hours.saturday}</div>
         </div>
       ),
       action: language === 'vi' ? 'Chi tiết' : 'Details'
@@ -117,7 +117,7 @@ const ContactSection = ({ language }) => {
                     shape="circle" 
                     className="!p-0 !flex !items-center !justify-center"
                     size="large"
-                    onClick={() => window.open('https://facebook.com/enkaisushi', '_blank')}
+                    onClick={() => window.open('https://facebook.com', '_blank')}
                   >
                     <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
                   </Button>
@@ -125,7 +125,7 @@ const ContactSection = ({ language }) => {
                     shape="circle" 
                     className="!p-0 !flex !items-center !justify-center"
                     size="large"
-                    onClick={() => window.open('https://instagram.com/enkaisushi', '_blank')}
+                    onClick={() => window.open('https://instagram.com', '_blank')}
                   >
                     <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
                   </Button>
@@ -133,7 +133,7 @@ const ContactSection = ({ language }) => {
                     shape="circle" 
                     className="!p-0 !flex !items-center !justify-center"
                     size="large"
-                    onClick={() => window.open('https://zalo.me/enkaisushi', '_blank')}
+                    onClick={() => window.open('https://zalo.me', '_blank')}
                   >
                     <img src={zaloIcon} alt="Zalo" className="w-6 h-6" />
                   </Button>
@@ -241,10 +241,9 @@ const ContactSection = ({ language }) => {
         </Row>        <div className="mt-16">
           <h3 className="text-2xl font-bold text-secondary-900 mb-6 text-center">
             {language === 'vi' ? 'Vị trí nhà hàng' : 'Restaurant Location'}
-          </h3>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
+          </h3>          <div className="rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4947871251284!2d106.6918174743644!3d10.775374489373163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f38f9ed887b%3A0x14aded5703768989!2sB%E1%BA%BFn%20Th%C3%A0nh%20Market!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.510380904979!2d106.67682217465538!3d10.77216708937637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f211db61bcf%3A0x80783225dbaf07ea!2zODdCIMSQLiBDYW8gVGjhuq9uZywgUGjGsOG7nW5nIDMsIFF14bqtbiAzLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1749581625211!5m2!1svi!2s"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -254,13 +253,12 @@ const ContactSection = ({ language }) => {
               title={language === 'vi' ? 'Vị trí nhà hàng Enkai Sushi' : 'Enkai Sushi Restaurant Location'}
             ></iframe>
           </div>
-          <div className="text-center mt-6">
-            <Button 
+          <div className="text-center mt-6">            <Button 
               type="primary" 
               size="large"
               icon={<EnvironmentOutlined />}
               className="!bg-primary-500 hover:!bg-primary-600 !border-primary-500 hover:!border-primary-600 !rounded-lg"
-              onClick={() => window.open('https://maps.google.com/?q=Bến+Thành+Market,+Ho+Chi+Minh+City,+Vietnam', '_blank')}
+              onClick={() => window.open('https://maps.google.com/?q=87B+Đường+Cao+Thắng,+Quận+3,+Hồ+Chí+Minh,+Vietnam', '_blank')}
             >
               {language === 'vi' ? 'Mở trên Google Maps' : 'Open in Google Maps'}
             </Button>
