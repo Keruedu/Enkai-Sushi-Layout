@@ -105,9 +105,10 @@ const ContactSection = ({ language }) => {
                         </Button>
                       </div>
                     </div>
-                  </Card>
-                ))}
-              </div>              <div className="bg-gray-50 rounded-xl p-6">
+                  </Card>                ))}
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
                 <h4 className="text-lg font-semibold text-secondary-900 mb-4">
                   {language === 'vi' ? 'Theo dõi chúng tôi' : 'Follow Us'}
                 </h4>

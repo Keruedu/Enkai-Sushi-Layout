@@ -4,6 +4,26 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'esbuild',
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          antd: ['antd', '@ant-design/icons'],
+        },
+      },
+    },
+    esbuild: {
+      target: 'esnext',
+      platform: 'browser',
+      format: 'esm'
+    },
+    chunkSizeWarningLimit: 1000,
+  },
   server: {
     port: 3000,
     host: '0.0.0.0', // Bind to all interfaces
@@ -24,5 +44,11 @@ export default defineConfig({
       'enkai-sushi-layout.onrender.com',
       '.onrender.com',
     ],
-  }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'antd', '@ant-design/icons'],
+    esbuildOptions: {
+      target: 'esnext',
+    },
+  },
 })
