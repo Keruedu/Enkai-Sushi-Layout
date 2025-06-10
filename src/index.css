@@ -258,6 +258,320 @@ html, body {
     text-overflow: ellipsis;
   }
   
+  /* Pattern Background cho toàn bộ menu section */
+  .menu-section-pattern {
+    background-image: url('/src/assets/images/pattern.png');
+    background-repeat: repeat;
+    background-size: 800px 800px; /* Làm pattern cực to */
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .menu-section-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(249, 250, 251, 0.90) 0%, 
+      rgba(255, 255, 255, 0.88) 50%, 
+      rgba(248, 250, 252, 0.90) 100%);
+    z-index: 1;
+  }
+  
+  .menu-section-pattern > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Menu Card Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 1; /* Changed from 0 to 1 to ensure visibility */
+  }
+  
+  /* Notification Banner Animations */
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-in {
+    animation: slide-in 0.5s ease-out forwards;
+  }
+  
+  /* Custom Alert Styles */
+  .ant-alert {
+    transition: all 0.3s ease;
+  }
+  
+  .ant-alert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .ant-alert-close-icon {
+    transition: all 0.2s ease;
+  }
+  
+  .ant-alert-close-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Menu Card Equal Heights */
+  .menu-card-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 400px; /* Ensure minimum height */
+  }
+  
+  .menu-card-container .ant-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 1 !important; /* Ensure visibility */
+  }
+  
+  .menu-card-container .ant-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Menu Cards Responsive Design */
+  @media (max-width: 768px) {
+    .menu-card-container .ant-card {
+      margin-bottom: 1rem;
+    }
+    
+    .menu-card-container .ant-card-body {
+      padding: 1rem;
+    }
+    
+    .menu-card-container .ant-card-cover {
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-card-container .ant-card-body {
+      padding: 0.75rem;
+    }
+    
+    .menu-card-container .ant-card-cover {
+      height: 160px;
+    }
+    
+    .animate-fade-in {
+      animation-delay: 0s !important;
+    }
+  }
+  
+  /* Welcome Modal Styles */
+  .welcome-modal .ant-modal-content {
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+  
+  .welcome-modal .ant-modal-close {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    top: 16px !important;
+    right: 16px !important;
+  }
+  
+  .welcome-modal .ant-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  /* Toast-like notifications */
+  .toast-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 350px;
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Loading skeleton for menu cards */
+  .menu-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Pattern Background cho toàn bộ card bao gồm padding */
+  .menu-card-full-pattern {
+    position: relative;
+    background-image: url('/src/assets/images/pattern.png');
+    background-repeat: repeat;
+    background-size: 300px 300px; /* Pattern cực to */
+    background-position: center;
+  }
+  
+  .menu-card-full-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.92); /* Overlay mờ hơn nhiều */
+    z-index: 1;
+  }
+  
+  .menu-card-full-pattern > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Đảm bảo pattern hiển thị ngay cả trên phần padding */
+  .menu-card-full-pattern .ant-card-body {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Hover effect cho pattern */
+  .menu-card-full-pattern:hover::before {
+    background: rgba(255, 255, 255, 0.88); /* Làm pattern rõ hơn một chút khi hover */
+  }
+
+  /* Pattern Background for Menu Items - chỉ cho nội dung */
+  .menu-item-pattern {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .menu-item-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/images/pattern.png');
+    background-repeat: repeat;
+    background-size: 400px 400px; /* Làm pattern còn to hơn nữa */
+    background-position: center;
+    opacity: 0.05; /* Giảm độ mờ xuống rất nhiều */
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .menu-item-pattern > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Pattern background for menu card body */
+  .menu-card-pattern {
+    background-image: url('/src/assets/images/pattern.png');
+    background-repeat: repeat;
+    background-size: 120px 120px;
+    background-position: center;
+    position: relative;
+  }
+  
+  .menu-card-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1;
+  }
+  
+  .menu-card-pattern > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Pattern overlay for hover effect */
+  .menu-card-pattern:hover::before {
+    background: rgba(255, 255, 255, 0.92);
+  }
+  
+  /* Alternative pattern style for subtle effect */
+  .menu-card-subtle-pattern {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.98) 100%);
+  }
+  
+  .menu-card-subtle-pattern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/images/pattern.png');
+    background-repeat: repeat;
+    background-size: 200px 200px; /* Làm pattern to hơn */
+    background-position: center;
+    opacity: 0.03; /* Giảm độ mờ xuống rất nhiều */
+    z-index: 0; /* Đặt z-index thấp hơn để không che hình ảnh */
+    pointer-events: none;
+  }
+  
+  .menu-card-subtle-pattern > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Đảm bảo hình ảnh không bị che */
+  .menu-card-subtle-pattern .ant-card-cover {
+    position: relative;
+    z-index: 3;
+  }
+
   /* Menu Card Animations */
   @keyframes fade-in {
     from {

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Row, Col, Typography, Space } from 'antd';
+import { Row, Col, Typography, Space, Button } from 'antd';
 import { PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined } from '@ant-design/icons';
 import { contactInfo } from '../../data/mockData';
 import logoImg from '../../assets/images/footer-logo.png';
-import footerPattern from '../../assets/images/footer-pattern.png';
-import pattern from '../../assets/images/pattern.png';
+import facebookIcon from '../../assets/icons/facebook.svg';
+import instagramIcon from '../../assets/icons/instagram.svg';
+import zaloIcon from '../../assets/icons/zalo.svg';
 import LazyImage from '../Common/LazyImage';
 
 const { Title, Text } = Typography;
@@ -14,11 +15,11 @@ const Footer = ({ language }) => {
     <footer 
       className="text-white relative bg-[#2A315D]"
 
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+    >      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <Row gutter={[32, 32]}>
-          <Col xs={24} md={8}>
-            <div className="space-y-4">              <div className="flex items-center space-x-3 mb-4">
+          <Col xs={24} md={6}>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 mb-4">
                 <LazyImage 
                   src={logoImg} 
                   alt="Enkai Sushi Logo" 
@@ -34,7 +35,7 @@ const Footer = ({ language }) => {
             </div>
           </Col>
           
-          <Col xs={24} md={8}>
+          <Col xs={24} md={6}>
             <div className="space-y-4">
               <Title level={5} className="text-white text-lg font-semibold mb-4">
                 {language === 'vi' ? 'Liên hệ' : 'Contact'}
@@ -52,7 +53,7 @@ const Footer = ({ language }) => {
             </div>
           </Col>
           
-          <Col xs={24} md={8}>
+          <Col xs={24} md={6}>
             <div className="space-y-4">
               <Title level={5} className="text-white text-lg font-semibold mb-4">
                 {language === 'vi' ? 'Giờ mở cửa' : 'Opening Hours'}

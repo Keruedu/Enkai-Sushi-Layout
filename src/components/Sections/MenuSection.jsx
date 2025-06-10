@@ -48,10 +48,11 @@ const MenuSection = ({ language }) => {
           ? `${itemName} đã được thêm vào danh sách yêu thích!` 
           : `${itemName} added to favorites!`);
       }
-    };return (
+    };    return (
       <Card 
-        className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 h-full flex flex-col"
-        hoverable        cover={
+        className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 h-full flex flex-col menu-card-full-pattern"
+        hoverable
+        cover={
           <div className="relative overflow-hidden h-48 bg-gray-200">
             <LazyImage 
               src={item.image} 
@@ -89,9 +90,8 @@ const MenuSection = ({ language }) => {
               </Tag>
             </div>
           </div>
-        }
-      >
-        <div className="p-6 flex flex-col flex-1">
+        }      >        
+      <div className="p-6 flex flex-col flex-1">
           {/* Title and Rating */}
           <div className="flex items-start justify-between mb-3">
             <Title level={4} className="text-lg font-bold text-gray-900 mb-0 flex-1 pr-2 line-clamp-2">
@@ -148,9 +148,8 @@ const MenuSection = ({ language }) => {
       </Card>
     );
   };
-  return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white" id="menu">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">        <div className="text-center mb-16">
+  return (    <section className="py-20 bg-gradient-to-b from-gray-50 to-white" id="menu">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="text-center mb-16">
           <Text className="text-primary-500 font-semibold text-sm sm:text-base tracking-wide uppercase mb-2 block">
             {language === 'vi' ? 'Thực đơn' : 'Our Menu'}
           </Text>
@@ -181,7 +180,8 @@ const MenuSection = ({ language }) => {
               )
             }))}
           />
-        </div>        <div className="mb-20">
+        </div>        
+        <div className="mb-20">
           <Row gutter={[32, 32]}>
             {filteredItems.map((item, index) => (
               <Col xs={24} sm={12} lg={8} xl={6} key={index}>

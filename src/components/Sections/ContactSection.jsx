@@ -3,6 +3,9 @@ import { Row, Col, Typography, Card, Button, Space, Form, Input } from 'antd';
 import { PhoneOutlined, EnvironmentOutlined, ClockCircleOutlined, MailOutlined, SendOutlined } from '@ant-design/icons';
 import { contactInfo } from '../../data/mockData';
 import footerPattern from '../../assets/images/footer-pattern.png';
+import facebookIcon from '../../assets/icons/facebook.svg';
+import instagramIcon from '../../assets/icons/instagram.svg';
+import zaloIcon from '../../assets/icons/zalo.svg';
 
 const { Title, Text } = Typography;
 const { TextArea } = Input;
@@ -104,33 +107,34 @@ const ContactSection = ({ language }) => {
                     </div>
                   </Card>
                 ))}
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6">
+              </div>              <div className="bg-gray-50 rounded-xl p-6">
                 <h4 className="text-lg font-semibold text-secondary-900 mb-4">
                   {language === 'vi' ? 'Theo dõi chúng tôi' : 'Follow Us'}
                 </h4>
                 <div className="flex space-x-3">
                   <Button 
                     shape="circle" 
-                    className="!bg-blue-600 !border-blue-600 !text-white hover:!bg-blue-700"
+                    className="!p-0 !flex !items-center !justify-center"
                     size="large"
+                    onClick={() => window.open('https://facebook.com/enkaisushi', '_blank')}
                   >
-                    f
+                    <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
                   </Button>
                   <Button 
                     shape="circle" 
-                    className="!bg-pink-500 !border-pink-500 !text-white hover:!bg-pink-600"
+                    className="!p-0 !flex !items-center !justify-center"
                     size="large"
+                    onClick={() => window.open('https://instagram.com/enkaisushi', '_blank')}
                   >
-                    📷
+                    <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
                   </Button>
                   <Button 
                     shape="circle" 
-                    className="!bg-blue-500 !border-blue-500 !text-white hover:!bg-blue-600"
+                    className="!p-0 !flex !items-center !justify-center"
                     size="large"
+                    onClick={() => window.open('https://zalo.me/enkaisushi', '_blank')}
                   >
-                    Z
+                    <img src={zaloIcon} alt="Zalo" className="w-6 h-6" />
                   </Button>
                 </div>
               </div>
@@ -233,34 +237,32 @@ const ContactSection = ({ language }) => {
               </Form>
             </Card>
           </Col>
-        </Row>
-
-        <div className="mt-16">
+        </Row>        <div className="mt-16">
           <h3 className="text-2xl font-bold text-secondary-900 mb-6 text-center">
             {language === 'vi' ? 'Vị trí nhà hàng' : 'Restaurant Location'}
           </h3>
-          <div className="bg-gray-100 rounded-2xl h-96 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <EnvironmentOutlined className="text-white text-3xl" />
-              </div>
-              <h4 className="text-xl font-semibold text-secondary-900 mb-2">
-                {language === 'vi' ? 'Bản đồ tương tác' : 'Interactive Map'}
-              </h4>
-              <p className="text-gray-600 mb-4">
-                {language === 'vi' 
-                  ? 'Nhấp để xem vị trí chính xác trên Google Maps'
-                  : 'Click to view exact location on Google Maps'
-                }
-              </p>
-              <Button 
-                type="primary" 
-                size="large"
-                className="!bg-primary-500 hover:!bg-primary-600 !border-primary-500 hover:!border-primary-600 !rounded-lg"
-              >
-                {language === 'vi' ? 'Mở bản đồ' : 'Open Map'}
-              </Button>
-            </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4947871251284!2d106.6918174743644!3d10.775374489373163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f38f9ed887b%3A0x14aded5703768989!2sB%E1%BA%BFn%20Th%C3%A0nh%20Market!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={language === 'vi' ? 'Vị trí nhà hàng Enkai Sushi' : 'Enkai Sushi Restaurant Location'}
+            ></iframe>
+          </div>
+          <div className="text-center mt-6">
+            <Button 
+              type="primary" 
+              size="large"
+              icon={<EnvironmentOutlined />}
+              className="!bg-primary-500 hover:!bg-primary-600 !border-primary-500 hover:!border-primary-600 !rounded-lg"
+              onClick={() => window.open('https://maps.google.com/?q=Bến+Thành+Market,+Ho+Chi+Minh+City,+Vietnam', '_blank')}
+            >
+              {language === 'vi' ? 'Mở trên Google Maps' : 'Open in Google Maps'}
+            </Button>
           </div>
         </div>
       </div>
